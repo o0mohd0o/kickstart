@@ -6,15 +6,14 @@ namespace Itcforu\Kickstart\Model;
 
 class Product {
 
-    private $category;
+    /**
+     * @param Category $category
+     */
+    public function __construct(private Category $category,){}
 
-    public function __construct(
-        Category $category
-    )
-    {
-        $this->category = $category;
-    }
-
+    /**
+     * @return string
+     */
     function getCategoryName(): string
     {
         return $this->category->getName();
